@@ -21,3 +21,49 @@ $cociente  = intdiv($n1, $n2);
 
 $nulo  = null;
 $lista = [1, 2, 3];
+
+var_dump($codigo, $n1, $precio, $activo, $nulo, $lista);
+
+$suma_str  = "5" + "10";
+$concat    = "5" . "10";
+$cast_int  = (int) "12abc";
+$float_eq  = (0.1 + 0.2 == 0.3);
+$loose     = ("10" == "1e1");
+$strict    = ("10" === "1e1");
+
+$redefinir = @define('SEMILLA_LAB8', 'otra');
+
+$resultado = [
+    'codigo'    => $codigo,
+    'n1'        => $n1,
+    'n2'        => $n2,
+    'suma'      => $suma,
+    'division'  => $division,
+    'resto'     => $resto,
+    'cociente'  => $cociente,
+    'precio'    => $precio,
+    'activo'    => $activo,
+    'tipos'     => [
+        'codigo' => gettype($codigo),
+        'n1'     => gettype($n1),
+        'precio' => gettype($precio),
+        'activo' => gettype($activo),
+        'nulo'   => gettype($nulo),
+        'lista'  => gettype($lista),
+    ],
+    'juggling'  => [
+        'suma_str'  => $suma_str,
+        'concat'    => $concat,
+        'cast_int'  => $cast_int,
+        'float_eq'  => $float_eq,
+        'loose'     => $loose,
+        'strict'    => $strict,
+    ],
+    'constantes' => [
+        'SEMILLA_LAB8' => constant('SEMILLA_LAB8'),
+        'LAB_NUMERO'   => LAB_NUMERO,
+        'redefinir'    => $redefinir,
+    ],
+];
+
+echo "\n##JSON## " . json_encode($resultado) . "\n";
